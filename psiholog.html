@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Илона Лонц — психолог. Индивидуальные и онлайн-консультации.">
+<title>Илона Лонц — психолог</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f5ebe0;
+  --bg-alt: #faf5f0;
+  --accent: #d5bdaf;
+  --accent-light: #e3d5ca;
+  --text: #3d3229;
+  --text-soft: #6b5d52;
+  --text-muted: #9a8b7e;
+  --white: #fffdfb;
+  --dark-accent: #806b5c;
+  --border: #e7dacf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: min(1120px, calc(100% - 48px));
+  margin: auto;
+}
+
+.serif {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dark-accent);
+}
+
+.section {
+  padding: 85px 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.2;
+  font-weight: 400;
+  margin: 12px 0 20px;
+}
+
+.section-intro {
+  max-width: 700px;
+  color: var(--text-soft);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 25px;
+  background: var(--dark-accent);
+  color: white;
+  border: 1px solid var(--dark-accent);
+  font-size: 13px;
+  transition: .25s;
+}
+
+.btn:hover {
+  background: #665346;
+  border-color: #665346;
+  transform: translateY(-2px);
+}
+
+/* HEADER */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245,235,224,.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.header-inner {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.logo {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.nav a:hover {
+  color: var(--dark-accent);
+}
+
+.menu-toggle {
+  display: none;
+  padding: 9px 13px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--text);
+}
+
+.mobile-nav {
+  display: none;
+  padding: 5px 0 20px;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 14px;
+}
+
+.mobile-nav.open {
+  display: flex;
+}
+
+/* HERO */
+
+.hero {
+  padding: 75px 0 85px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 6vw, 69px);
+  font-weight: 400;
+  line-height: 1.12;
+  margin: 20px 0;
+}
+
+.hero h1 em {
+  color: #987a65;
+  font-weight: 400;
+}
+
+.hero-description {
+  max-width: 490px;
+  color: var(--text-soft);
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 22px;
+  background: var(--accent-light);
+  box-shadow: 0 18px 45px rgba(61,50,41,.12);
+  margin-left: auto;
+}
+
+.photo-caption {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.about-text {
+  color: var(--text-soft);
+  font-size: 15px;
+  line-height: 1.9;
+  margin-top: 15px;
+}
+
+.quote {
+  border-left: 2px solid var(--accent);
+  padding: 20px 25px;
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  line-height: 1.5;
+  color: var(--dark-accent);
+}
+
+/* CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+  margin-top: 35px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 28px 24px;
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(61,50,41,.06);
+}
+
+.card-number {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #a58b78;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 13px 0;
+}
+
+.card p {
+  color: var(--text-soft);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* STEPS */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.step {
+  border-top: 1px solid var(--accent);
+  padding-top: 20px;
+}
+
+.step strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  font-weight: 400;
+  margin: 12px 0;
+}
+
+.step p {
+  color: var(--text-soft);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* REVIEWS */
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+  margin-top: 35px;
+}
+
+.review {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 27px;
+}
+
+.review p {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--text-soft);
+}
+
+.review small {
+  display: block;
+  margin-top: 20px;
+  color: var(--dark-accent);
+  font-size: 11px;
+}
+
+/* FAQ */
+
+.faq {
+  max-width: 820px;
+  margin-top: 30px;
+}
+
+.faq details {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: '+';
+  color: var(--dark-accent);
+  font-size: 23px;
+}
+
+.faq details[open] summary::after {
+  content: '−';
+}
+
+.faq details p {
+  padding-top: 14px;
+  color: var(--text-soft);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* CONTACT */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contact-copy {
+  color: var(--text-soft);
+  font-size: 15px;
+  line-height: 1.9;
+  margin-top: 15px;
+}
+
+.contact-form {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 32px;
+}
+
+.contact-form h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-soft);
+  margin: 15px 0 7px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text);
+  outline: none;
+  font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--dark-accent);
+}
+
+.contact-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+.form-message {
+  margin-top: 14px;
+  font-size: 13px;
+}
+
+.form-message.error {
+  color: #a34c3f;
+}
+
+.form-message.success {
+  color: #55734e;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 30px 0;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 12px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+  .nav {
+    gap: 12px;
+  }
+
+  .hero-grid {
+    gap: 35px;
+  }
+
+  .cards,
+  .reviews {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px) {
+  .container {
+    width: min(100% - 36px,520px);
+  }
+
+  .header-inner {
+    min-height: 68px;
+  }
+
+  .nav,
+  .header-inner > .btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero {
+    padding: 45px 0 55px;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .cards,
+  .reviews,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .quote {
+    font-size: 22px;
+  }
+
+  .contact-form {
+    padding: 23px;
+  }
+
+  .hero-photo {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 16px;
+    margin: 0;
+  }
+
+  .photo-caption {
+    text-align: left;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+
+      <a class="logo" href="#home">ИЛОНА ЛОНЦ</a>
+
+      <nav class="nav">
+        <a href="#about">Обо мне</a>
+        <a href="#requests">С чем работаю</a>
+        <a href="#services">Консультации</a>
+        <a href="#faq">Вопросы</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+
+      <a href="#contact" class="btn">Записаться</a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Открыть меню"
+        aria-expanded="false">
+        ☰ Меню
+      </button>
+
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#about">Обо мне</a>
+      <a href="#requests">С чем работаю</a>
+      <a href="#services">Консультации</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div>
+      <div class="eyebrow">Психолог · Бережная поддержка</div>
+
+      <h1>
+        Найти опору
+        <em>в себе</em>
+        и двигаться дальше
+      </h1>
+
+      <p class="hero-description">
+        Пространство, где можно быть собой, разобраться
+        в чувствах и найти новые способы справляться
+        с жизненными трудностями.
+      </p>
+
+      <a href="#contact" class="btn">
+        Записаться на консультацию
+      </a>
+    </div>
+
+    <div>
+      <img
+        class="hero-photo"
+        src="https://raw.githubusercontent.com/lelgop/media/main/Илона_Лонц.jpg"
+        alt="Психолог Илона Лонц"
+        loading="eager"
+        decoding="async"
+      >
+
+      <p class="photo-caption">
+        ИЛОНА ЛОНЦ · ПСИХОЛОГ
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ОБО МНЕ -->
+
+<section class="section section-alt" id="about">
+  <div class="container about-grid">
+
+    <div>
+      <div class="eyebrow">Знакомство</div>
+      <h2 class="section-title">Обо мне</h2>
+
+      <p class="about-text">
+        Я — Илона Лонц, психолог. В своей работе я создаю
+        пространство доверия и уважения, где можно говорить
+        о важном без страха осуждения.
+      </p>
+
+      <p class="about-text">
+        Мне важно не просто выслушать человека, а помочь
+        ему почувствовать себя понятым, увидеть свои
+        переживания яснее и найти собственные решения.
+      </p>
+    </div>
+
+    <div class="quote">
+      «Иногда первый шаг к переменам —
+      это возможность быть услышанным и принятым».
+    </div>
+
+  </div>
+</section>
+
+<!-- С ЧЕМ РАБОТАЮ -->
+
+<section class="section" id="requests">
+  <div class="container">
+
+    <div class="eyebrow">С чем можно обратиться</div>
+    <h2 class="section-title">Когда хочется что-то изменить</h2>
+
+    <p class="section-intro">
+      На консультации можно исследовать то, что беспокоит
+      именно вас. Вот несколько тем, с которыми можно прийти.
+    </p>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-number">01</div>
+        <h3>Тревога и переживания</h3>
+        <p>
+          Когда сложно расслабиться, мысли не дают покоя,
+          а внутри много напряжения.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">02</div>
+        <h3>Отношения</h3>
+        <p>
+          Трудности в общении, конфликты, личные границы
+          и повторяющиеся сценарии.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">03</div>
+        <h3>Самооценка</h3>
+        <p>
+          Неуверенность в себе, самокритика,
+          сложности с принятием себя.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">04</div>
+        <h3>Жизненные перемены</h3>
+        <p>
+          Переходные периоды, выбор, неопределённость
+          и поиск новых ориентиров.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">05</div>
+        <h3>Эмоциональное состояние</h3>
+        <p>
+          Усталость, чувство одиночества, растерянность
+          и накопившиеся эмоции.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">06</div>
+        <h3>Понимание себя</h3>
+        <p>
+          Желание лучше понимать свои желания,
+          потребности и внутренние реакции.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- КОНСУЛЬТАЦИИ -->
+
+<section class="section section-alt" id="services">
+  <div class="container">
+
+    <div class="eyebrow">Формат работы</div>
+    <h2 class="section-title">Консультации</h2>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-number">ФОРМАТ 01</div>
+        <h3>Индивидуальная встреча</h3>
+        <p>
+          Личное пространство для обсуждения вашего запроса,
+          чувств и возможных направлений работы.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">ФОРМАТ 02</div>
+        <h3>Онлайн-консультация</h3>
+        <p>
+          Встреча дистанционно — можно обратиться
+          из удобного для вас места.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">ФОРМАТ 03</div>
+        <h3>Продолжение работы</h3>
+        <p>
+          Регулярные встречи, если вы решите глубже
+          исследовать свой запрос.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ЭТАПЫ РАБОТЫ -->
+
+<section class="section">
+  <div class="container">
+
+    <div class="eyebrow">Как проходит работа</div>
+    <h2 class="section-title">
+      Путь начинается с первого разговора
+    </h2>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="card-number">ШАГ 01</div>
+        <strong>Знакомство</strong>
+        <p>
+          Обсуждаем ваш запрос и то,
+          что привело вас на консультацию.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="card-number">ШАГ 02</div>
+        <strong>Исследование</strong>
+        <p>
+          Вместе разбираемся в переживаниях,
+          мыслях и повторяющихся ситуациях.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="card-number">ШАГ 03</div>
+        <strong>Движение вперёд</strong>
+        <p>
+          Определяем важные для вас изменения
+          и подходящие следующие шаги.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+
+<section class="section section-alt">
+  <div class="container">
+
+    <div class="eyebrow">Отзывы</div>
+    <h2 class="section-title">Слова клиентов</h2>
+
+    <p class="section-intro">
+      Ниже представлены демонстрационные примеры оформления.
+      Перед публикацией замените их реальными отзывами
+      с согласия авторов.
+    </p>
+
+    <div class="reviews">
+
+      <article class="review">
+        <p>
+          «Мне было важно, что меня внимательно слушали
+          и не торопили. Я смогла спокойнее посмотреть
+          на свою ситуацию».
+        </p>
+        <small>Анна · демонстрационный отзыв</small>
+      </article>
+
+      <article class="review">
+        <p>
+          «На встрече получилось сформулировать то,
+          что давно не давало мне покоя. Спасибо
+          за бережное отношение».
+        </p>
+        <small>Мария · демонстрационный отзыв</small>
+      </article>
+
+      <article class="review">
+        <p>
+          «Я почувствовала, что могу говорить открыто
+          и постепенно разбираться в своих переживаниях».
+        </p>
+        <small>Елена · демонстрационный отзыв</small>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<section class="section" id="faq">
+  <div class="container">
+
+    <div class="eyebrow">FAQ</div>
+    <h2 class="section-title">Частые вопросы</h2>
+
+    <div class="faq">
+
+      <details>
+        <summary>Сколько длится консультация?</summary>
+        <p>
+          Продолжительность встречи и условия работы
+          можно уточнить при записи.
+        </p>
+      </details>
+
+      <details>
+        <summary>Можно ли обратиться онлайн?</summary>
+        <p>
+          Да, предусмотрен онлайн-формат.
+          Подробности согласуются при записи.
+        </p>
+      </details>
+
+      <details>
+        <summary>Нужно ли заранее готовиться?</summary>
+        <p>
+          Специальная подготовка не требуется.
+          Достаточно прийти с тем, что сейчас для вас важно.
+        </p>
+      </details>
+
+      <details>
+        <summary>Что, если я не знаю, с чего начать?</summary>
+        <p>
+          Это нормально. Можно начать с простого рассказа
+          о том, что вас беспокоит или почему вы решили обратиться.
+        </p>
+      </details>
+
+      <details>
+        <summary>Как записаться?</summary>
+        <p>
+          Оставьте заявку в форме ниже.
+          Сейчас форма работает в демонстрационном режиме
+          и не отправляет данные психологу.
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- КОНТАКТЫ -->
+
+<section class="section section-alt" id="contact">
+  <div class="container contact-grid">
+
+    <div>
+      <div class="eyebrow">Связаться со мной</div>
+      <h2 class="section-title">Сделайте первый шаг</h2>
+
+      <p class="contact-copy">
+        Оставьте заявку, чтобы обозначить свой запрос.
+        После подключения канала связи здесь можно будет
+        отправлять реальные обращения.
+      </p>
+
+      <p class="contact-copy">
+        <strong>Илона Лонц</strong><br>
+        Психолог
+      </p>
+    </div>
+
+    <form class="contact-form" id="bookingForm" novalidate>
+
+      <h3>Заявка на консультацию</h3>
+
+      <label for="clientName">Ваше имя</label>
+      <input
+        type="text"
+        id="clientName"
+        name="name"
+        placeholder="Как к вам обращаться?"
+        minlength="2"
+        required
+      >
+
+      <label for="clientContact">Телефон или мессенджер</label>
+      <input
+        type="text"
+        id="clientContact"
+        name="contact"
+        placeholder="+7 ..."
+        required
+      >
+
+      <label for="clientMessage">Кратко о вашем запросе</label>
+      <textarea
+        id="clientMessage"
+        name="message"
+        placeholder="О чём хотели бы поговорить?"
+      ></textarea>
+
+      <p class="form-note">
+        Это демонстрационная форма. Данные не передаются
+        психологу и не сохраняются на сервере.
+        Для реального сбора заявок необходимо подключить
+        канал отправки и разместить политику обработки
+        персональных данных.
+      </p>
+
+      <button class="btn" type="submit">
+        Отправить заявку
+      </button>
+
+      <div
+        class="form-message"
+        id="formMessage"
+        role="status"
+        aria-live="polite">
+      </div>
+
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© Илона Лонц · Психолог</span>
+    <span>Сайт-визитка</span>
+  </div>
+</footer>
+
+<script>
+
+// МОБИЛЬНОЕ МЕНЮ
+
+const menuToggle = document.getElementById('menuToggle');
+const mobileNav = document.getElementById('mobileNav');
+
+menuToggle.addEventListener('click', function () {
+  const opened = mobileNav.classList.toggle('open');
+
+  menuToggle.setAttribute('aria-expanded', opened);
+  menuToggle.textContent = opened ? '✕ Закрыть' : '☰ Меню';
+});
+
+mobileNav.querySelectorAll('a').forEach(function (link) {
+  link.addEventListener('click', function () {
+    mobileNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = '☰ Меню';
+  });
+});
+
+// FAQ: ОДИН ОТКРЫТЫЙ ВОПРОС ЗА РАЗ
+
+const faqItems = document.querySelectorAll('.faq details');
+
+faqItems.forEach(function (item) {
+  item.addEventListener('toggle', function () {
+    if (item.open) {
+      faqItems.forEach(function (otherItem) {
+        if (otherItem !== item) {
+          otherItem.open = false;
+        }
+      });
+    }
+  });
+});
+
+// ПРОВЕРКА ФОРМЫ
+
+const bookingForm = document.getElementById('bookingForm');
+const formMessage = document.getElementById('formMessage');
+
+bookingForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const name = document.getElementById('clientName');
+  const contact = document.getElementById('clientContact');
+
+  formMessage.className = 'form-message';
+
+  if (name.value.trim().length < 2) {
+    formMessage.textContent =
+      'Пожалуйста, укажите имя (не менее двух символов).';
+
+    formMessage.classList.add('error');
+    name.focus();
+    return;
+  }
+
+  if (contact.value.trim().length < 5) {
+    formMessage.textContent =
+      'Пожалуйста, укажите корректный контакт для связи.';
+
+    formMessage.classList.add('error');
+    contact.focus();
+    return;
+  }
+
+  formMessage.textContent =
+    'Проверка пройдена! Это демонстрация: заявка пока никуда не отправляется.';
+
+  formMessage.classList.add('success');
+});
+
+</script>
+
+</body>
+</html>
