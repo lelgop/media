@@ -154,11 +154,21 @@ if(localStorage.getItem('monikaClientName'))document.getElementById('clientName'
         e.stopPropagation();
         const filter = tagElement.dataset.filter;
         
+        // 1. Меняем переменную
         activeFilter = filter; 
-        renderPoses();
         
-        document.querySelectorAll('.tag').forEach(t => t.style.backgroundColor = '');
-        tagElement.style.backgroundColor = '#d1c0b0';
+        // 2. Находим кнопку сверху с таким же названием и "нажимаем" её
+        const topButtons = document.querySelectorAll('#poseFilters [data-filter]');
+        topButtons.forEach(btn => {
+            if (btn.dataset.filter === filter) {
+                btn.classList.add('active'); // Визуально выделяем
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        // 3. Перерисовываем каталог
+        renderPoses();
     }
 });
 </script>
