@@ -147,6 +147,15 @@ document.getElementById('shareFavorites').onclick=()=>shareOrCopy(shareText());
 document.getElementById('messageForm').addEventListener('submit',e=>{e.preventDefault();shareOrCopy(shareText())});
 renderShootCards();renderShootSelection();renderFilters();renderPoses();renderFavorites();renderChecklist();updateMode();syncSelectedPoses();
 if(localStorage.getItem('monikaClientName'))document.getElementById('clientName').value=localStorage.getItem('monikaClientName');
+ document.addEventListener('click', function(e) {
+    if (e.target.closest('[data-filter]')) {
+        const filter = e.target.closest('[data-filter]').dataset.filter;
+        document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+        e.target.closest('[data-filter]').classList.add('active');
+        activeFilter = filter; 
+        renderPoses();
+    }
+}); 
 </script>
 </body>
 </html>
