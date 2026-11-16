@@ -154,18 +154,26 @@ if(localStorage.getItem('monikaClientName'))document.getElementById('clientName'
         e.stopPropagation();
         const filter = tagElement.dataset.filter;
         
-        // 1. Меняем переменную
         activeFilter = filter; 
-        
-        // 2. Находим кнопку сверху с таким же названием и "нажимаем" её
+
         const topButtons = document.querySelectorAll('#poseFilters [data-filter]');
         topButtons.forEach(btn => {
             if (btn.dataset.filter === filter) {
-                btn.classList.add('active'); // Визуально выделяем
+                btn.classList.add('active');
             } else {
                 btn.classList.remove('active');
             }
         });
+
+        const modal = document.getElementById('poseModal');
+        if (modal.classList.contains('open')) {
+            modal.classList.remove('open'); 
+        }
+
+        renderPoses();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+});
 
         // 3. Перерисовываем каталог
         renderPoses();
