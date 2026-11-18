@@ -1,1 +1,936 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
+<meta name="theme-color" content="#f4fbfa">
+
+<title>ЯЗЫК БЕЗ ГРАНИЦ — школа иностранных языков</title>
+
+<style>
+
+:root{--ink:#102d3b;--muted:#68828a;--teal:#13aaa6;--deep:#087d88;--pale:#e8f8f5;--line:#d9ece8;--paper:#f7fbfa;--white:#fff;--shadow:0 12px 30px #145d6414;--r:22px}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 Inter,Arial,sans-serif}
+
+img{max-width:100%;display:block}
+
+a{color:inherit;text-decoration:none}
+
+button,input,select,textarea{font:inherit}
+
+.wrap{width:min(1160px,calc(100% - 36px));margin:auto}
+
+
+header{position:sticky;top:0;z-index:50;background:#fafffff0;backdrop-filter:blur(14px);border-bottom:1px solid #e2efec}
+
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.01em;font-size:18px}
+
+.brandmark{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#b7f5e9,#0ba7a5);color:#08757c;font-size:24px;box-shadow:0 6px 15px #059c9430}
+
+.brand small{display:block;color:#68858c;font-size:8px;letter-spacing:.16em;margin-top:-4px}
+
+.links{display:flex;gap:23px;font-size:11px;font-weight:800;color:#4c6871}
+
+.links a:hover{color:var(--teal)}
+
+.navCta,.btn{border:0;border-radius:999px;padding:13px 20px;color:white;background:linear-gradient(110deg,#16b9b0,#087c8c);font-size:12px;font-weight:900;box-shadow:0 7px 18px #0a999133;display:inline-flex;justify-content:center;align-items:center;gap:9px;cursor:pointer;transition:.2s}
+
+.btn:hover,.navCta:hover{transform:translateY(-2px);box-shadow:0 11px 22px #0a999144}
+
+.btn.soft{background:#e5f7f4;color:#087f86;box-shadow:none}
+
+.burger{display:none;background:none;border:0;font-size:25px;color:var(--ink)}
+
+
+.hero{padding:42px 0 20px;background:radial-gradient(ellipse at 78% 20%,#d5f4f0,transparent 37%),linear-gradient(180deg,#faffff,#eff9f8);overflow:hidden}
+
+.heroGrid{display:grid;grid-template-columns:.88fr 1.12fr;gap:24px;align-items:center}
+
+.eyebrow{font-size:9px;letter-spacing:.18em;color:var(--deep);font-weight:900;text-transform:uppercase}
+
+.hero h1{font-size:clamp(40px,5vw,62px);letter-spacing:-.05em;line-height:1.03;margin:12px 0 17px}
+
+.hero h1 span{color:var(--deep)}
+
+.lead{max-width:460px;color:#607a82;font-size:14px;margin:0 0 22px}
+
+.heroBtns{display:flex;gap:12px;flex-wrap:wrap}
+
+.micro{font-size:10px;color:#81989c;margin-top:16px}
+
+.heroArt{height:320px;position:relative;display:grid;place-items:center}
+
+.orb{position:absolute;width:330px;height:330px;border-radius:50%;background:linear-gradient(145deg,#d4f4ed,#bae9e6);right:8%;top:0}
+
+.teacherHero{position:relative;z-index:2;width:100%;max-width:600px;height:300px;object-fit:cover;object-position:center 50%;border:6px solid #ffffffdb;border-radius:28px;box-shadow:0 22px 55px #0c72721a;transform:rotate(-1deg)}
+
+.floating{position:absolute;z-index:3;background:white;border:1px solid #dff0ec;border-radius:14px;padding:10px 13px;box-shadow:var(--shadow);font-size:10px;font-weight:800}
+
+.floating b{display:block;font-size:16px;color:var(--deep)}
+
+.float1{right:0;top:12%}
+
+.float2{left:0;bottom:4%}
+
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:12px 0 42px}
+
+.stat{display:flex;align-items:center;gap:12px;padding:13px;background:#ffffffd9;border:1px solid #e0efec;border-radius:16px;box-shadow:0 5px 18px #0b77770c}
+
+.statIcon{width:44px;height:44px;display:grid;place-items:center;background:linear-gradient(145deg,#e5fffa,#9ee7dd);border-radius:50%;font-size:22px;box-shadow:inset 0 2px 3px #fff,0 5px 10px #159b9030}
+
+.stat b{display:block;font-size:17px;line-height:1.1}
+
+.stat span{font-size:9px;color:#6e858b}
+
+
+section{padding:60px 0}
+
+.sectionHead{text-align:center;max-width:720px;margin:0 auto 30px}
+
+.sectionHead h2{font-size:clamp(27px,3.4vw,40px);line-height:1.1;letter-spacing:-.04em;margin:8px 0 10px}
+
+.sectionHead p{color:#718990;font-size:12px;margin:0}
+
+
+.languages{background:white}
+
+.langGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+
+.lang{border:1px solid #dcece9;border-radius:19px;padding:12px;background:linear-gradient(180deg,#fff,#f6fbfa);box-shadow:0 7px 18px #15585b0d;cursor:pointer;transition:.2s}
+
+.lang:hover,.lang.active{transform:translateY(-4px);border-color:#7dd5ce;box-shadow:var(--shadow)}
+
+.langTop{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+
+.flag{font-size:29px;line-height:1}
+
+.lang h3{font-size:13px;margin:0}
+
+.lang img{width:100%;height:95px;object-fit:cover;border-radius:12px}
+
+.lang p{font-size:10px;line-height:1.35;color:#627b82;margin:8px 0 0}
+
+.langHint{text-align:center;color:#8aa0a2;font-size:9px;margin-top:13px}
+
+
+.aboutGrid{display:grid;grid-template-columns:.95fr 1.1fr;gap:25px;align-items:center}
+
+.aboutPhoto{height:285px;width:100%;object-fit:cover;object-position:center 35%;border-radius:25px;box-shadow:var(--shadow)}
+
+.aboutText h2{font-size:34px;line-height:1.08;letter-spacing:-.04em;margin:8px 0 14px}
+
+.aboutText p{font-size:12px;color:#698188}
+
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+
+.check{font-size:10px;font-weight:800;color:#496a72;display:flex;gap:8px;align-items:center}
+
+.check i{font-style:normal;background:#dff7f1;color:#078b8b;border-radius:7px;width:21px;height:21px;display:grid;place-items:center;flex:none}
+
+
+.method{background:#fff}
+
+.features{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+
+.feature{background:linear-gradient(150deg,#fff,#f5fbfa);border:1px solid #e0efec;border-radius:19px;padding:17px;box-shadow:0 6px 18px #13585c0b}
+
+.icon3d{width:54px;height:54px;margin-bottom:10px;filter:drop-shadow(0 6px 5px #078e8b30)}
+
+.feature h3{font-size:12px;margin:0 0 6px}
+
+.feature p{font-size:9px;color:#6b8288;margin:0;line-height:1.45}
+
+
+.pricing{background:linear-gradient(180deg,#f4faf9,#edf8f6)}
+
+.priceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+
+.priceCard{background:white;border:1px solid #dcece9;border-radius:21px;padding:22px;box-shadow:var(--shadow);position:relative}
+
+.priceCard.featured{border:2px solid #44c6bc;transform:translateY(-5px)}
+
+.tag{position:absolute;top:-12px;right:17px;background:#0a9698;color:#fff;border-radius:20px;padding:5px 11px;font-size:9px;font-weight:900}
+
+.priceCard h3{font-size:16px;margin:0 0 6px}
+
+.priceCard .desc{font-size:10px;color:#7a9297;min-height:32px}
+
+.price{font-size:24px;font-weight:900;color:#087f88;margin:14px 0}
+
+.priceCard ul{list-style:none;padding:0;margin:15px 0 19px}
+
+.priceCard li{font-size:10px;color:#5f7980;padding:6px 0;border-bottom:1px solid #edf3f2}
+
+.priceCard li:before{content:"✓";color:#0aa69e;font-weight:900;margin-right:8px}
+
+.priceCard .btn{width:100%}
+
+
+.booking{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px;align-items:center;background:#fff;border:1px solid #deeeeb;border-radius:27px;padding:28px;box-shadow:var(--shadow)}
+
+.booking h2{font-size:31px;line-height:1.08;letter-spacing:-.04em;margin:9px 0}
+
+.booking p{font-size:12px;color:#718990}
+
+.promise{background:#eff9f7;padding:13px;border-radius:13px;font-size:10px;color:#517179;margin-top:18px}
+
+.form{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+
+.field{display:flex;flex-direction:column;gap:5px}
+
+.field.full,.form .btn,.consent{grid-column:1/-1}
+
+.field label{font-size:10px;font-weight:900;color:#57737a}
+
+.field input,.field select,.field textarea{border:1px solid #dcebe8;border-radius:10px;padding:11px;background:#fbfdfd;font-size:11px;outline:none}
+
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#24b5af;box-shadow:0 0 0 3px #22b7b01c}
+
+.field textarea{min-height:65px;resize:vertical}
+
+.error{display:none;font-size:9px;color:#c44}
+
+.field.invalid .error{display:block}
+
+.field.invalid input{border-color:#d66}
+
+.consent{font-size:9px;color:#8aa0a4}
+
+
+.reviews{background:white}
+
+.testimonialGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+
+.testimonial{border:1px solid #d7eeea;background:linear-gradient(180deg,#fff,#f7fcfb);border-radius:21px;padding:15px;box-shadow:var(--shadow)}
+
+.testimonialHead{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+
+.testimonialHead img{width:62px;height:62px;object-fit:cover;border-radius:50%;border:3px solid white;box-shadow:0 4px 13px #0c646422}
+
+.testimonialHead h3{font-size:13px;margin:0 0 3px}
+
+.stars{color:#f5b51b;letter-spacing:2px;font-size:16px;line-height:1}
+
+.studentLang{font-size:9px;color:#71878d}
+
+.beforeAfter{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+
+.beforeAfter div{border-radius:13px;padding:10px;min-height:127px}
+
+.before{background:linear-gradient(145deg,#fff0f0,#fff8f7)}
+
+.after{background:linear-gradient(145deg,#e6f9f1,#f4fff9)}
+
+.beforeAfter b{font-size:10px;color:#9a5156}
+
+.after b{color:#07836e}
+
+.beforeAfter p{font-size:9px;line-height:1.4;color:#536b71;margin:5px 0 0}
+
+.demoNote{margin:14px 0 0;text-align:center;font-size:9px;color:#899da1}
+
+
+.final{padding:45px 0 60px}
+
+.finalPanel{background:linear-gradient(110deg,#075363,#078b8d 72%,#25bdb0);border-radius:26px;padding:32px 38px;color:white;display:flex;align-items:center;justify-content:space-between;gap:20px;overflow:hidden;position:relative}
+
+.finalPanel h2{font-size:30px;line-height:1.08;margin:0 0 8px;max-width:600px}
+
+.finalPanel p{font-size:11px;color:#d7f4ef;margin:0}
+
+.finalPanel .btn{background:white;color:#087c86;white-space:nowrap}
+
+footer{background:#103744;color:#c5dada;padding:23px 0}
+
+.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:10px}
+
+.foot .brand{color:white}
+
+.footLinks{display:flex;gap:15px}
+
+.toast{position:fixed;right:18px;bottom:18px;z-index:100;display:none;max-width:320px;background:#123f49;color:white;border-radius:13px;padding:13px 16px;box-shadow:0 12px 30px #092c3544;font-size:12px}
+
+.toast.show{display:block}
+
+
+@media(max-width:900px){
+
+.links{gap:11px}
+
+.langGrid{grid-template-columns:repeat(3,1fr)}
+
+.features{grid-template-columns:repeat(3,1fr)}
+
+.heroGrid{grid-template-columns:1fr 1fr}
+
+.teacherHero{height:260px}
+
+.heroArt{height:280px}
+
+}
+
+@media(max-width:700px){
+
+.wrap{width:calc(100% - 28px)}
+
+.nav{height:66px}
+
+.burger{display:block}
+
+.links{display:none;position:absolute;top:66px;left:0;right:0;background:#fbfefd;padding:18px 24px;flex-direction:column;gap:16px;border-bottom:1px solid var(--line)}
+
+.links.open{display:flex}
+
+.navCta{padding:10px 12px;font-size:9px}
+
+.brand{font-size:14px}
+
+.hero{padding-top:30px}
+
+.heroGrid{grid-template-columns:1fr;gap:0}
+
+.hero h1{font-size:43px}
+
+.lead{font-size:13px}
+
+.heroArt{height:255px}
+
+.teacherHero{height:235px;width:94%}
+
+.orb{width:245px;height:245px;right:15%}
+
+.float1{right:0;top:5%}
+
+.float2{left:0;bottom:0}
+
+.stats{grid-template-columns:1fr 1fr;padding-bottom:28px}
+
+.stat{padding:10px}
+
+.stat b{font-size:15px}
+
+section{padding:46px 0}
+
+.sectionHead{margin-bottom:23px}
+
+.langGrid{grid-template-columns:1fr 1fr}
+
+.lang:last-child{grid-column:1/-1}
+
+.lang img{height:88px}
+
+.aboutGrid{grid-template-columns:1fr;gap:20px}
+
+.aboutPhoto{height:255px}
+
+.aboutText h2{font-size:30px}
+
+.checks{gap:9px}
+
+.features{grid-template-columns:1fr 1fr}
+
+.feature{padding:14px}
+
+.priceGrid{grid-template-columns:1fr;gap:16px}
+
+.priceCard.featured{transform:none;margin-top:8px}
+
+.booking{grid-template-columns:1fr;padding:20px}
+
+.booking h2{font-size:28px}
+
+.form{grid-template-columns:1fr}
+
+.field.full,.form .btn,.consent{grid-column:auto}
+
+.testimonialGrid{grid-template-columns:1fr}
+
+.beforeAfter div{min-height:0}
+
+.finalPanel{display:block;padding:27px 23px}
+
+.finalPanel h2{font-size:27px}
+
+.finalPanel .btn{margin-top:18px}
+
+.foot{flex-direction:column;align-items:flex-start}
+
+.footLinks{flex-wrap:wrap}
+
+}
+
+@media(max-width:380px){
+
+.navCta{display:none}
+
+.features{grid-template-columns:1fr}
+
+.checks{grid-template-columns:1fr}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="wrap nav">
+
+<a class="brand" href="#top">
+
+<span class="brandmark">🌐</span>
+
+<span>ЯЗЫК БЕЗ ГРАНИЦ<small>ШКОЛА ИНОСТРАННЫХ ЯЗЫКОВ</small></span>
+
+</a>
+
+<nav class="links" id="navLinks">
+
+<a href="#top">Главная</a><a href="#languages">Языки</a><a href="#about">Обо мне</a><a href="#method">Методика</a><a href="#prices">Услуги</a><a href="#reviews">Отзывы</a><a href="#booking">Контакты</a>
+
+</nav>
+
+<div style="display:flex;align-items:center;gap:10px">
+
+<a class="navCta" href="#booking">▣ Записаться на занятие</a>
+
+<button aria-label="Открыть меню" class="burger" id="burger">☰</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main id="top">
+
+<div class="hero">
+
+<div class="wrap heroGrid">
+
+<div>
+
+<div class="eyebrow">ОНЛАЙН-ОБУЧЕНИЕ · ДЛЯ ЖИЗНИ, РАБОТЫ И ПУТЕШЕСТВИЙ</div>
+
+<h1>Изучайте иностранные языки <span>с удовольствием</span></h1>
+
+<p class="lead">Английский, немецкий, французский, корейский и китайский — уверенное общение, новые возможности и мир без границ!</p>
+
+<div class="heroBtns"><a class="btn" href="#booking">Начать обучение →</a><a class="btn soft" href="#languages">Выбрать язык</a></div>
+
+<div class="micro">Индивидуальный план · Удобный онлайн-формат · Поддержка преподавателя</div>
+
+</div>
+
+<div class="heroArt">
+
+<div class="orb"></div>
+
+<img alt="Преподаватель школы за ноутбуком на фоне достопримечательностей" class="teacherHero" loading="eager" src="assets/teacher-hero.webp"/>
+
+<div class="floating float1"><b>5 языков</b>на выбор</div>
+
+<div class="floating float2"><b>Ваш темп</b>обучение под ваши цели</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="wrap stats">
+
+<div class="stat"><div class="statIcon">🎓</div><div><b>5 языков</b><span>на выбор</span></div></div>
+
+<div class="stat"><div class="statIcon">🌟</div><div><b>Ваш темп</b><span>индивидуальный план</span></div></div>
+
+<div class="stat"><div class="statIcon">💻</div><div><b>Онлайн</b><span>из любой точки мира</span></div></div>
+
+<div class="stat"><div class="statIcon">🚀</div><div><b>Ваши цели</b><span>понятный план занятий</span></div></div>
+
+</div>
+
+
+<section class="languages" id="languages">
+
+<div class="wrap">
+
+<div class="sectionHead">
+
+<div class="eyebrow">ВЫБЕРИТЕ СВОЙ ЯЗЫК</div>
+
+<h2>Какие языки доступны для изучения</h2>
+
+<p>Выберите направление — и мы подберём программу под ваш уровень, интересы и задачу.</p>
+
+</div>
+
+<div class="langGrid">
+
+<div class="lang" data-lang="Английский"><div class="langTop"><span class="flag">🇬🇧</span><h3>Английский</h3></div><img alt="Лондон: Биг-Бен и Вестминстер" loading="lazy" src="assets/country-uk.webp"/><p>Для карьеры, путешествий, учёбы и общения за границей.</p></div>
+
+<div class="lang" data-lang="Немецкий"><div class="langTop"><span class="flag">🇩🇪</span><h3>Немецкий</h3></div><img alt="Берлин: Бранденбургские ворота" loading="lazy" src="assets/country-germany.webp"/><p>Для работы, образования и жизни в Европе.</p></div>
+
+<div class="lang" data-lang="Французский"><div class="langTop"><span class="flag">🇫🇷</span><h3>Французский</h3></div><img alt="Париж: Эйфелева башня" loading="lazy" src="assets/country-france.webp"/><p>Язык культуры, искусства, моды и путешествий.</p></div>
+
+<div class="lang" data-lang="Корейский"><div class="langTop"><span class="flag">🇰🇷</span><h3>Корейский</h3></div><img alt="Сеул: дворец Кёнбоккун" loading="lazy" src="assets/country-korea.webp"/><p>Для общения, культуры и интереса к Корее.</p></div>
+
+<div class="lang" data-lang="Китайский"><div class="langTop"><span class="flag">🇨🇳</span><h3>Китайский</h3></div><img alt="Пекин: Храм Неба" loading="lazy" src="assets/country-china.webp"/><p>Для бизнеса, путешествий и новых возможностей.</p></div>
+
+</div>
+
+<div class="langHint">Нажмите на карточку — выбранный язык появится в заявке.</div>
+
+</div>
+
+</section>
+
+
+<section id="about">
+
+<div class="wrap aboutGrid">
+
+<img alt="Та же преподавательница в светлом кабинете, руки опущены" class="aboutPhoto" loading="lazy" src="assets/teacher-about.webp"/>
+
+<div class="aboutText">
+
+<div class="eyebrow">ОБО МНЕ</div>
+
+<h2>Ваш проводник в мир языков</h2>
+
+<p>Я помогаю ученикам не просто запоминать слова и правила, а превращать иностранный язык в полезный инструмент для реальной жизни.</p>
+
+<p>На занятиях мы отталкиваемся от ваших целей: уверенно говорить в поездках, подготовиться к учёбе, расширить карьерные возможности или понимать любимый контент в оригинале.</p>
+
+<div class="checks">
+
+<div class="check"><i>✓</i>Доброжелательная атмосфера</div>
+
+<div class="check"><i>✓</i>Объяснения без перегруза</div>
+
+<div class="check"><i>✓</i>Программа под ваш уровень</div>
+
+<div class="check"><i>✓</i>Поддержка между уроками</div>
+
+</div>
+
+<a class="btn" href="#booking">Познакомиться на занятии →</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="method" id="method">
+
+<div class="wrap">
+
+<div class="sectionHead">
+
+<div class="eyebrow">МОЯ МЕТОДИКА</div>
+
+<h2>Почему обучение помогает двигаться к результату</h2>
+
+<p>Современный подход, практика и поддержка — чтобы вы могли использовать язык в жизни.</p>
+
+</div>
+
+<div class="features">
+
+<div class="feature">
+
+<svg aria-hidden="true" class="icon3d" viewBox="0 0 64 64"><defs><linearGradient id="g1"><stop stop-color="#a1fff0"/><stop offset="1" stop-color="#089d9c"/></linearGradient></defs><circle cx="29" cy="32" r="23" fill="url(#g1)"/><circle cx="29" cy="32" r="14" fill="none" stroke="#fff" stroke-width="4"/><circle cx="29" cy="32" r="5" fill="#fff"/><path d="M29 32L52 9M42 9h10v10" fill="none" stroke="#f16a75" stroke-width="6" stroke-linecap="round"/></svg>
+
+<h3>Практика с первого занятия</h3><p>Сразу начинаем говорить и применять язык в жизни.</p>
+
+</div>
+
+<div class="feature">
+
+<svg aria-hidden="true" class="icon3d" viewBox="0 0 64 64"><path d="M8 23L31 10l24 13-24 14z" fill="#36d6ca"/><path d="M8 23v19l23 13V37z" fill="#078f96"/><path d="M55 23v19L31 55V37z" fill="#83eee0"/><path d="M21 12l10-6 11 6-11 6z" fill="#7eabff"/></svg>
+
+<h3>Современная методика</h3><p>Живой язык, актуальная лексика и реальные ситуации.</p>
+
+</div>
+
+<div class="feature">
+
+<svg aria-hidden="true" class="icon3d" viewBox="0 0 64 64"><rect x="8" y="10" width="46" height="34" rx="6" fill="#20c8c2"/><rect x="13" y="15" width="36" height="24" rx="3" fill="#eafffc"/><path d="M25 21l13 7-13 7z" fill="#138c9b"/><path d="M4 49h54l-5 6H9z" fill="#087b87"/></svg>
+
+<h3>Индивидуальный подход</h3><p>Программа под ваши цели, уровень и темп обучения.</p>
+
+</div>
+
+<div class="feature">
+
+<svg aria-hidden="true" class="icon3d" viewBox="0 0 64 64"><path d="M8 52h48" stroke="#0e9297" stroke-width="5" stroke-linecap="round"/><rect x="12" y="34" width="8" height="18" rx="2" fill="#61d8ca"/><rect x="27" y="23" width="8" height="29" rx="2" fill="#24bbb7"/><rect x="42" y="11" width="8" height="41" rx="2" fill="#078b98"/><path d="M10 27L26 18l9 3 18-13" fill="none" stroke="#f2b64a" stroke-width="4" stroke-linecap="round"/></svg>
+
+<h3>Измеримый прогресс</h3><p>Отслеживаем успехи и корректируем программу.</p>
+
+</div>
+
+<div class="feature">
+
+<svg aria-hidden="true" class="icon3d" viewBox="0 0 64 64"><circle cx="30" cy="32" r="23" fill="#36c9bc"/><path d="M13 37l12-18 11 14 12-14" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M38 13h12v12" fill="none" stroke="#fff" stroke-width="5"/><path d="M6 52l8-5 7 5 8-5 8 5 8-5 8 5" fill="none" stroke="#0a7c88" stroke-width="4"/></svg>
+
+<h3>Мотивация и поддержка</h3><p>Обратная связь, внимание и помощь на всём пути.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="pricing" id="prices">
+
+<div class="wrap">
+
+<div class="sectionHead">
+
+<div class="eyebrow">УСЛУГИ И СТОИМОСТЬ</div>
+
+<h2>Выберите удобный формат обучения</h2>
+
+<p>Стоимость зависит от языка, уровня и формата. Оставьте заявку — подберём программу и расскажем подробности.</p>
+
+</div>
+
+<div class="priceGrid">
+
+<div class="priceCard">
+
+<h3>Индивидуальные занятия</h3>
+
+<div class="desc">Персональная программа и максимум внимания.</div>
+
+<div class="price">Стоимость по запросу</div>
+
+<ul><li>Занятия один на один</li><li>Материалы под ваш уровень</li><li>Обратная связь и рекомендации</li></ul>
+
+<a class="btn" data-format="Индивидуальные занятия" href="#booking">Узнать стоимость →</a>
+
+</div>
+
+<div class="priceCard featured">
+
+<span class="tag">Популярный формат</span>
+
+<h3>Пакет занятий</h3>
+
+<div class="desc">Регулярный ритм и движение к цели.</div>
+
+<div class="price">Стоимость по запросу</div>
+
+<ul><li>План обучения</li><li>Последовательная практика</li><li>Отслеживание прогресса</li></ul>
+
+<a class="btn" data-format="Пакет занятий" href="#booking">Узнать стоимость →</a>
+
+</div>
+
+<div class="priceCard">
+
+<h3>Парные занятия</h3>
+
+<div class="desc">Учитесь вместе с другом или партнёром.</div>
+
+<div class="price">Стоимость по запросу</div>
+
+<ul><li>Практика общения</li><li>Общие учебные цели</li><li>Поддержка преподавателя</li></ul>
+
+<a class="btn" data-format="Парные занятия" href="#booking">Узнать стоимость →</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="booking">
+
+<div class="wrap">
+
+<div class="booking">
+
+<div>
+
+<div class="eyebrow">ВАШ ПЕРВЫЙ ШАГ</div>
+
+<h2>Узнайте стоимость и получите план обучения</h2>
+
+<p>Расскажите, какой язык хотите изучать. Мы поможем выбрать формат и сориентируем по стоимости.</p>
+
+<div class="promise">✦ Сначала познакомимся, определим вашу задачу и предложим подходящий вариант занятий.</div>
+
+</div>
+
+<form class="form" id="leadForm" novalidate>
+
+<div class="field" id="nameField"><label for="name">Ваше имя *</label><input id="name" name="name" placeholder="Как к вам обращаться?" required><span class="error">Укажите имя</span></div>
+
+<div class="field" id="phoneField"><label for="phone">Телефон или мессенджер *</label><input id="phone" name="phone" placeholder="+7 900 000-00-00" required><span class="error">Укажите контакт</span></div>
+
+<div class="field"><label for="language">Язык</label><select id="language" name="language"><option value="">Выберите язык</option><option>Английский</option><option>Немецкий</option><option>Французский</option><option>Корейский</option><option>Китайский</option></select></div>
+
+<div class="field"><label for="level">Уровень</label><select id="level" name="level"><option>Пока не знаю</option><option>С нуля</option><option>Начальный</option><option>Средний</option><option>Продвинутый</option></select></div>
+
+<div class="field full"><label for="goal">Ваша цель (необязательно)</label><textarea id="goal" name="goal" placeholder="Например: хочу общаться в путешествиях..."></textarea></div>
+
+<button class="btn" type="submit">Узнать стоимость и оставить заявку →</button>
+
+<div class="consent">Демо-форма проверяет заполнение, но пока не отправляет данные на сервер.</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="reviews" id="reviews">
+
+<div class="wrap">
+
+<div class="sectionHead">
+
+<div class="eyebrow">УЧЕБНЫЕ ИСТОРИИ</div>
+
+<h2>От первых шагов — к уверенному общению</h2>
+
+<p>Примеры образовательных ситуаций и возможных результатов обучения.</p>
+
+</div>
+
+<div class="testimonialGrid">
+
+<article class="testimonial">
+
+<div class="testimonialHead"><img alt="Вымышленный ученик Алексей" height="70" loading="lazy" src="assets/student-alexey.webp" width="70"><div><h3>Алексей, 29 лет</h3><div aria-label="Пять звёзд" class="stars">★★★★★</div><span class="studentLang">Английский язык</span></div></div>
+
+<div class="beforeAfter">
+
+<div class="before"><b>До обучения</b><p>Понимал отдельные слова, но терялся в разговоре и боялся ошибок при общении с иностранцами.</p></div>
+
+<div class="after"><b>После обучения</b><p>Стало проще поддерживать диалог, задавать вопросы и общаться в поездках без постоянного переводчика.</p></div>
+
+</div>
+
+</article>
+
+<article class="testimonial">
+
+<div class="testimonialHead"><img alt="Вымышленная ученица Мария" height="70" loading="lazy" src="assets/student-maria.webp" width="70"><div><h3>Мария, 24 года</h3><div aria-label="Пять звёзд" class="stars">★★★★★</div><span class="studentLang">Немецкий язык</span></div></div>
+
+<div class="beforeAfter">
+
+<div class="before"><b>До обучения</b><p>Знала отдельные базовые фразы, путалась в грамматике и боялась говорить в простых ситуациях.</p></div>
+
+<div class="after"><b>После обучения</b><p>Стало легче строить предложения и увереннее общаться на бытовые темы по понятному плану.</p></div>
+
+</div>
+
+</article>
+
+<article class="testimonial">
+
+<div class="testimonialHead"><img alt="Вымышленная ученица Ирина" height="70" loading="lazy" src="assets/student-irina.webp" width="70"><div><h3>Ирина, 36 лет</h3><div aria-label="Пять звёзд" class="stars">★★★★★</div><span class="studentLang">Китайский язык</span></div></div>
+
+<div class="beforeAfter">
+
+<div class="before"><b>До обучения</b><p>Китайский казался сложным: было трудно запоминать тоны, иероглифы и нужные фразы.</p></div>
+
+<div class="after"><b>После обучения</b><p>Появилась система занятий, стало легче различать знакомые слова и использовать простые фразы.</p></div>
+
+</div>
+
+</article>
+
+</div>
+
+<p class="demoNote">Фотографии и истории учеников вымышлены и используются как демонстрационный пример оформления блока.</p>
+
+</div>
+
+</section>
+
+
+<div class="final">
+
+<div class="wrap">
+
+<div class="finalPanel">
+
+<div><h2>Откройте для себя мир новых возможностей!</h2><p>Изучайте языки, путешествуйте, развивайте карьеру и общайтесь без границ.</p></div>
+
+<a class="btn" href="#booking">Начать обучение сегодня →</a>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+
+<footer>
+
+<div class="wrap foot">
+
+<a class="brand" href="#top"><span class="brandmark">🌐</span><span>ЯЗЫК БЕЗ ГРАНИЦ<small>ШКОЛА ИНОСТРАННЫХ ЯЗЫКОВ</small></span></a>
+
+<span>© 2026 Школа «ЯЗЫК БЕЗ ГРАНИЦ»</span>
+
+<div class="footLinks"><a href="#languages">Языки</a><a href="#prices">Услуги</a><a href="#booking">Запись</a></div>
+
+</div>
+
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+
+<script>
+
+const toast=document.getElementById('toast');
+
+let timer;
+
+
+function message(t){
+
+  toast.textContent=t;
+
+  toast.classList.add('show');
+
+  clearTimeout(timer);
+
+  timer=setTimeout(()=>toast.classList.remove('show'),3800);
+
+}
+
+
+const burger=document.getElementById('burger');
+
+const nav=document.getElementById('navLinks');
+
+
+burger.addEventListener('click',()=>{
+
+  nav.classList.toggle('open');
+
+  burger.textContent=nav.classList.contains('open')?'×':'☰';
+
+});
+
+
+nav.querySelectorAll('a').forEach(a=>{
+
+  a.addEventListener('click',()=>{
+
+    nav.classList.remove('open');
+
+    burger.textContent='☰';
+
+  });
+
+});
+
+
+document.querySelectorAll('.lang').forEach(card=>{
+
+  card.addEventListener('click',()=>{
+
+    document.querySelectorAll('.lang').forEach(x=>x.classList.remove('active'));
+
+    card.classList.add('active');
+
+    document.getElementById('language').value=card.dataset.lang;
+
+    document.getElementById('booking').scrollIntoView({behavior:'smooth'});
+
+    message('Выбран язык: '+card.dataset.lang);
+
+  });
+
+});
+
+
+document.querySelectorAll('[data-format]').forEach(btn=>{
+
+  btn.addEventListener('click',()=>{
+
+    document.getElementById('goal').value='Интересует формат: '+btn.dataset.format;
+
+  });
+
+});
+
+
+document.getElementById('leadForm').addEventListener('submit',e=>{
+
+  e.preventDefault();
+
+  let ok=true;
+
+
+  [['name','nameField',v=>v.trim().length>1],
+
+   ['phone','phoneField',v=>v.trim().length>=5]
+
+  ].forEach(([id,wrap,check])=>{
+
+    const el=document.getElementById(id);
+
+    const box=document.getElementById(wrap);
+
+    const valid=check(el.value);
+
+    box.classList.toggle('invalid',!valid);
+
+    if(!valid)ok=false;
+
+  });
+
+
+  if(!ok){
+
+    message('Проверьте имя и контакт для связи');
+
+    return;
+
+  }
+
+
+  const name=document.getElementById('name').value.trim();
+
+  message('Спасибо, '+name+'! Форма заполнена. Для получения заявок подключите отправку на сервер.');
+
+});
+
+</script>
+
+</body>
+
+</html>
+
+
