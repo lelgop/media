@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ремонт квартир под ключ. Выберите формат работ и рассчитайте предварительный бюджет по площади квартиры.">
+<title>ФОРМА — ремонт квартир под ключ</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap">
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header id="top"><a class="brand" href="#top"><span class="mark" aria-hidden="true"></span>ФОРМА</a><nav aria-label="Разделы сайта"><a href="#services">Услуги</a><a href="#projects">Работы</a><a href="#about">О нас</a></nav><a class="outline" href="#estimate">Рассчитать ремонт</a></header>
+<main>
+<section class="hero" aria-labelledby="hero-title">
+  <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85" alt="" fetchpriority="high">
+  <div class="hero-content"><p class="eyebrow">Студия ремонта квартир</p><h1 id="hero-title">Ремонт, после которого<br> <em>хочется домой.</em></h1><p>От черновых работ до чистовой отделки. Подберите формат ремонта и узнайте, какой бюджет заложить.</p><a class="button" href="#estimate">Рассчитать стоимость</a></div>
+  <span class="hero-foot">РЕМОНТ КВАРТИР ПОД КЛЮЧ</span>
+</section>
+<section id="services" class="section wrap">
+  <p class="eyebrow accent">Услуги</p><div class="section-title"><h2>Какой ремонт<br> вам нужен?</h2><p>Подберите объём работ под состояние квартиры и ваши планы.</p></div>
+  <div class="services">
+    <article><h3>Косметический</h3><p>Обновить интерьер без переделки инженерных систем. Стены, потолки, напольные покрытия и плинтусы.</p><a href="#estimate" data-type="cosmetic">Посчитать косметический</a></article>
+    <article><h3>Капитальный</h3><p>Подготовить квартиру к жизни с нуля. Демонтаж, подготовка поверхностей, электрика, сантехника и отделка.</p><a href="#estimate" data-type="capital">Посчитать капитальный</a></article>
+    <article><h3>По дизайн-проекту</h3><p>Воплотить интерьер по вашим чертежам. Сложные узлы, раскладка материалов и сценарии освещения.</p><a href="#estimate" data-type="design">Посчитать по проекту</a></article>
+  </div>
+</section>
+<section id="projects" class="section project-section">
+  <div class="wrap"><p class="eyebrow accent">До и после</p><div class="section-title"><h2>Как меняется<br> пространство</h2><p>Два примера отделки. Выберите комнату и двигайте ползунок, чтобы сравнить состояния.</p></div>
+  <div class="tabs" role="group" aria-label="Выбор комнаты"><button type="button" data-project="0" aria-pressed="true">Гостиная</button><button type="button" data-project="1" aria-pressed="false">Кухня</button></div>
+  <div class="comparison" id="comparison">
+    <img id="after" alt="Пример готовой гостиной" loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85">
+    <img id="before" alt="Пример чернового помещения" loading="lazy" src="https://decai.ai/images/homeDesign/compare/functionsBrief/img_interior_1_before.webp">
+    <span class="before-tag" aria-hidden="true">До</span><span class="after-tag" aria-hidden="true">После</span><span class="divider" aria-hidden="true"><b>‹ ›</b></span>
+    <input id="split" type="range" min="0" max="100" value="50" aria-label="Доля изображения до ремонта">
+  </div>
+  <p class="caption">Иллюстрация возможного результата на разных объектах.</p></div>
+</section>
+<section id="about" class="section wrap about">
+  <img loading="lazy" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1100&q=85" alt="Светлый интерьер с отделкой из натуральных материалов">
+  <div><p class="eyebrow accent">О компании</p><h2>От замера<br> до приёмки</h2><p>В «ФОРМЕ» ремонт начинается с разговора о том, как вы будете жить в квартире. На замере выясняем состояние помещения, согласуем объём работ и составляем смету.</p>
+  <dl><dt>Замер и смета</dt><dd>Фиксируем объёмы и согласуем список работ до начала ремонта.</dd><dt>Работы по этапам</dt><dd>Обсуждаем график и проверяем скрытые работы до чистовой отделки.</dd><dt>Приёмка квартиры</dt><dd>Проходим по согласованному списку вместе с вами.</dd></dl></div>
+</section>
+<section id="reviews" class="section reviews"><div class="wrap"><p class="eyebrow accent">Отзывы</p><h2>Опыт клиентов</h2><p>Собираем отзывы о том, как прошёл ремонт: от согласования сметы до приёмки квартиры. В превью отзывы ещё не добавлены.</p></div></section>
+<section id="estimate" class="section estimate"><div class="wrap"><p class="eyebrow">Калькулятор ремонта</p><h2>Сколько стоит ваш ремонт?</h2><p class="estimate-intro">Укажите площадь и формат работ, чтобы получить предварительный диапазон стоимости.</p>
+<div class="calc"><form id="calculator"><label for="kind">Вид ремонта</label><select id="kind"><option value="cosmetic">Косметический</option><option value="capital" selected>Капитальный</option><option value="design">По дизайн-проекту</option></select>
+<label for="area">Площадь, м²</label><input id="area" type="number" min="15" max="300" value="55" required>
+<input id="area-range" type="range" min="15" max="300" value="55" aria-label="Площадь квартиры в квадратных метрах"><span class="bounds"><span>15 м²</span><span>300 м²</span></span>
+<label class="check"><input id="materials" type="checkbox"> Учесть черновые материалы</label></form>
+<div class="total"><p class="eyebrow accent">Предварительно</p><output id="price" for="kind area materials" aria-live="polite"></output><p id="breakdown"></p><p class="caption">Ставки демонстрационные. Точная смета зависит от состояния квартиры и согласованного объёма работ.</p><button class="button" id="enquiry" type="button">Подготовить заявку</button></div></div>
+</div></section>
+</main>
+<footer class="wrap"><a class="brand" href="#top"><span class="mark" aria-hidden="true"></span>ФОРМА</a><span>Студия ремонта квартир</span><a href="#top">Наверх</a></footer>
+<dialog id="lead"><form id="lead-form"><button type="button" class="close" aria-label="Закрыть">×</button><h2>Заявка на замер</h2><p id="lead-summary"></p><p>В превью заявку можно скачать. Данные останутся у вас.</p><label for="name">Ваше имя</label><input id="name" autocomplete="name" required maxlength="80"><label for="phone">Телефон</label><input id="phone" type="tel" autocomplete="tel" required maxlength="30"><button class="button" type="submit">Скачать заявку</button><p id="lead-status" role="status"></p></form></dialog>
+</body>
+</html>
