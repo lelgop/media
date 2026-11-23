@@ -7,7 +7,7 @@
 <title>ФОРМА — ремонт квартир под ключ</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap">
 <link rel="stylesheet" href="style.css">
-<script src="app.js" defer></script>
+<script src="app.js?v=renovated-room" defer></script>
 </head>
 <body>
 <header id="top"><a class="brand" href="#top"><span class="mark" aria-hidden="true"></span>ФОРМА</a><nav aria-label="Разделы сайта"><a href="#services">Услуги</a><a href="#projects">Работы</a><a href="#about">О нас</a></nav><a class="outline" href="#estimate">Рассчитать ремонт</a></header>
@@ -29,12 +29,12 @@
   <div class="wrap"><p class="eyebrow accent">До и после</p><div class="section-title"><h2>Как меняется<br> пространство</h2><p>Два примера отделки. Выберите комнату и двигайте ползунок, чтобы сравнить состояния.</p></div>
   <div class="tabs" role="group" aria-label="Выбор комнаты"><button type="button" data-project="0" aria-pressed="true">Гостиная</button><button type="button" data-project="1" aria-pressed="false">Кухня</button></div>
   <div class="comparison" id="comparison">
-    <img id="after" alt="Пример готовой гостиной" loading="lazy" src="./images/living-room-after.jpg">
-    <img id="before" alt="Пример чернового помещения" loading="lazy" src="https://decai.ai/images/homeDesign/compare/functionsBrief/img_interior_1_before.webp">
+    <img id="after" alt="Пример готовой гостиной" loading="lazy" src="./images/living-room-renovated.jpg">
+    <img id="before" alt="Пример чернового помещения" loading="lazy" src="./images/living-room-before.webp">
     <span class="before-tag" aria-hidden="true">До</span><span class="after-tag" aria-hidden="true">После</span><span class="divider" aria-hidden="true"><b>‹ ›</b></span>
     <input id="split" type="range" min="0" max="100" value="50" aria-label="Доля изображения до ремонта">
   </div>
-  <p class="caption">Иллюстрация возможного результата на разных объектах.</p></div>
+  <p class="caption" id="project-caption">Визуализация ремонта на основе исходного фото гостиной.</p></div>
 </section>
 <section id="about" class="section wrap about">
   <img loading="lazy" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1100&q=85" alt="Светлый интерьер с отделкой из натуральных материалов">

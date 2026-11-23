@@ -46,13 +46,13 @@ updateEstimate();
 const projects = [
   {
     room: 'гостиной',
-    before: 'https://decai.ai/images/homeDesign/compare/functionsBrief/img_interior_1_before.webp',
-    after: './images/living-room-after.jpg'
+    before: './images/living-room-before.webp',
+    after: './images/living-room-renovated.jpg', caption: 'Визуализация ремонта на основе исходного фото гостиной.'
   },
   {
     room: 'кухни',
     before: 'https://autocad-specialist.ru/images/uroki-blog/program-design/03-realnaya-kvartira-do-dizayn-proekta.jpg',
-    after: './images/kitchen-after.jpg'
+    after: './images/kitchen-after.jpg', caption: 'Примеры черновой и чистовой отделки на разных объектах.'
   }
 ];
 const split = get('split');
@@ -66,6 +66,7 @@ tabs.forEach(tab => tab.addEventListener('click', () => {
   get('before').alt = 'Пример чернового помещения под отделку';
   get('after').src = project.after;
   get('after').alt = 'Пример отделки ' + project.room;
+  get('project-caption').textContent = project.caption;
   split.value = 50;
   updateSplit();
 }));
