@@ -51,8 +51,8 @@ const projects = [
   },
   {
     room: 'кухни',
-    before: './images/kitchen-before.jpg',
-    after: './images/kitchen-after.jpg', caption: 'Примеры черновой и чистовой отделки на разных объектах.'
+    before: './images/kitchen-before-matched.jpg',
+    after: './images/kitchen-after.jpg', caption: 'Визуализация чернового состояния на основе фото готовой кухни.'
   }
 ];
 const split = get('split');
