@@ -47,11 +47,11 @@ const projects = [
   {
     room: 'гостиной',
     before: './images/living-room-before.webp',
-    after: './images/living-room-renovated.jpg', caption: 'Визуализация ремонта на основе исходного фото гостиной.'
+    after: './images/living-room-evening.jpg', caption: 'Визуализация ремонта на основе исходного фото гостиной.'
   },
   {
     room: 'кухни',
-    before: 'https://autocad-specialist.ru/images/uroki-blog/program-design/03-realnaya-kvartira-do-dizayn-proekta.jpg',
+    before: './images/kitchen-before.jpg',
     after: './images/kitchen-after.jpg', caption: 'Примеры черновой и чистовой отделки на разных объектах.'
   }
 ];
