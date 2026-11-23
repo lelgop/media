@@ -47,12 +47,12 @@ const projects = [
   {
     room: 'гостиной',
     before: 'https://decai.ai/images/homeDesign/compare/functionsBrief/img_interior_1_before.webp',
-    after: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85'
+    after: './images/living-room-after.jpg'
   },
   {
     room: 'кухни',
     before: 'https://autocad-specialist.ru/images/uroki-blog/program-design/03-realnaya-kvartira-do-dizayn-proekta.jpg',
-    after: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1600&q=85'
+    after: './images/kitchen-after.jpg'
   }
 ];
 const split = get('split');
